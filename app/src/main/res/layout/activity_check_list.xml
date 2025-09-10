@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckList"
+    android:background="#121212">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"
+        android:layout_marginBottom="60dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
+        android:backgroundTint="#317743"
+        app:strokeColor="#317642"
+        app:strokeWidth="2dp"
+
+        >
+
+        <EditText
+            android:id="@+id/txtAdd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:hint="Přidej novou položku"
+            android:textColorHint="#317743"
+            android:textSize="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="12dp"
+            android:textStyle="bold"
+            android:textColor="#317743"/>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            app:iconTint="#317743"
+            app:icon="@drawable/plus"
+            app:strokeColor="#317642"
+            app:strokeWidth="2dp"
+            app:backgroundTint="#121212"
+            android:layout_marginRight="40dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
