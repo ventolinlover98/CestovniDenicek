@@ -9,18 +9,19 @@
     android:background="@drawable/intro_black_screen"
     android:orientation="vertical">
 
-    <FrameLayout
+    <ImageView
+        android:id="@+id/topImage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:id="@+id/intro_logo"/>
-
-
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/homepage" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerView" />
+        android:id="@+id/recyclerView"
+        android:layout_below="@id/topImage"/>
 
 
 

@@ -44,7 +44,7 @@ public class CheckListAdapter extends RecyclerView.Adapter<CheckListViewHolder> 
     @NonNull
     @Override
     public CheckListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new CheckListViewHolder(LayoutInflater.from(context).inflate(R.layout.check_list_item, parent, false));
+        return new CheckListViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item, parent, false));
     }
 
     @Override

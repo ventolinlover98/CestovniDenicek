@@ -23,15 +23,14 @@ import com.example.cestovnidenicek.Database.RoomDB;
 import com.example.cestovnidenicek.Models.Items;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class CheckList extends AppCompatActivity {
+public class List extends AppCompatActivity {
 
 
     RecyclerView recyclerView;
     CheckListAdapter checkListAdapter;
     RoomDB database;
-    List<Items> itemsList = new ArrayList<>();
+    java.util.List<Items> itemsList = new ArrayList<>();
     String header, show;
 
     EditText txtAdd;
@@ -42,7 +41,7 @@ public class CheckList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_check_list);
+        setContentView(R.layout.activity_list);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -75,9 +74,9 @@ public class CheckList extends AppCompatActivity {
                 String itemName = txtAdd.getText().toString();
                 if(itemName!=null && !itemName.isEmpty()){
                     addNewItem(itemName);
-                    Toast.makeText(CheckList.this, "Položka přidána.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(List.this, "Položka přidána.", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(CheckList.this, "Vyplňte pro přidání položky.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(List.this, "Vyplňte pro přidání položky.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -109,11 +108,11 @@ public class CheckList extends AppCompatActivity {
         txtAdd.setText("");
     }
 
-    private void updateRecycler(List<Items> itemsList) {
+    private void updateRecycler(java.util.List<Items> itemsList) {
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL));
-        checkListAdapter = new CheckListAdapter(CheckList.this,itemsList,database, show);
+        checkListAdapter = new CheckListAdapter(List.this,itemsList,database, show);
         recyclerView.setAdapter(checkListAdapter);
 
     }

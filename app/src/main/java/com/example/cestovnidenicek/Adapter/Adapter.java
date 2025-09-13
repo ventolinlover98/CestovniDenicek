@@ -9,26 +9,22 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.airbnb.lottie.animation.content.Content;
-import com.example.cestovnidenicek.CheckList;
+import com.example.cestovnidenicek.List;
 import com.example.cestovnidenicek.Constants.Constants;
 import com.example.cestovnidenicek.R;
 
-import java.util.List;
-
 public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
 
-    List<String> titles;
-    List<Integer> images;
+    java.util.List<String> titles;
+    java.util.List<Integer> images;
     LayoutInflater inflater;
     Activity activity;
 
-    public Adapter(Context context, List<String> titles, List<Integer> images, Activity activity) {
+    public Adapter(Context context, java.util.List<String> titles, java.util.List<Integer> images, Activity activity) {
         this.titles = titles;
         this.images = images;
         this.activity = activity;
@@ -52,7 +48,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
             @Override
             public void onClick(View v) {
                // Toast.makeText(activity, "Clicked on card", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(v.getContext(), CheckList.class);
+                Intent intent = new Intent(v.getContext(), List.class);
                 intent.putExtra(Constants.HEADER_SMALL, titles.get(position));
                 v.getContext().startActivity(intent);
             }
