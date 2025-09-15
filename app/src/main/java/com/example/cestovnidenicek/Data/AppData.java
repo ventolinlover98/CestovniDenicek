@@ -32,50 +32,53 @@ public class AppData extends Application {
         category = "Než Pojedu";
         List<Items> nezPojedu = new ArrayList<Items>();
         nezPojedu.clear();
-        nezPojedu.add(new Items("Planost cestovního pasu/občasnkého průkazu", category, false));
-        nezPojedu.add(new Items("Cestovní pojištění", category, false));
-        nezPojedu.add(new Items("Léky a osobní hygiena", category, false));
+        nezPojedu.add(new Items("Příklad: Cestovní pojištění", category, false));
         return nezPojedu;
     }
 
     public List<Items> getNouzoveKontakty(){
-        String []data = {"Rodinné kontakty", "Pojišťovna", "Ambasáda", "Místní tísňová linka", "Kontakt na ubytování"};
+        String []data = {"Příklad: Velvyslanectví České republiky:  00-31 (0)70 313 00 31"};
         return prepareItemsList(Constants.NOUZOVE_KONTAKTY_CAMEL_CASE, data);
     }
 
     public List<Items> getDoprava(){
-        String []data = {"Řidičský průkaz", "Doprava z letiště", "Telefonní číslo na taxi", "Připravená hototvost na mýto", "Parkování"};
+        String []data = {"Příklad: Lístky na hromadnou dopravu v Amsterdamu (24 hodin) - €9,50"};
         return prepareItemsList(Constants.DOPRAVA_CAMEL_CASE, data);
     }
 
     public List<Items> getUbytovani(){
-        String []data = {"Adresa", "Kontakt", "Check-in"};
+        String []data = {"Příklad: Hotel Fogo €80 na noc"};
         return prepareItemsList(Constants.UBYTOVANI_CAMEL_CASE, data);
     }
 
     public List<Items> getRozpocet(){
-        String []data = {"Hotovost v místní měně"};
+        String []data = {"Příklad: Denní rozpočet na jídlo: €40"};
         return prepareItemsList(Constants.ROZPOCET_CAMEL_CASE, data);
     }
 
     public List<Items> getCestovniDokumenty(){
-        String []data = {"Pas", "Občasnký průkaz", "Cestovní pojištění", "Vizum"};
+        String []data = {"Příklad: Občasnký průkaz nebo pas"};
         return prepareItemsList(Constants.CESTOVNI_DOKUMENTY_CAMEL_CASE, data);
     }
 
     public List<Items> getRezervaceAVstupenky(){
-        String []data = {"Památky", "Restaurace", "Program v okolí"};
+        String []data = {"Příklad: Rijksmuseum €25"};
         return prepareItemsList(Constants.REZERVACE_A_VSTUPENKY_CAMEL_CASE, data);
     }
 
     public List<Items> getSuvenyry(){
-        String []data = {"Rodiče", "Kamarádi", "Magnetka do sbírky"};
+        String []data = {"Příklad: Dárek pro rodinu"};
         return prepareItemsList(Constants.SUVENYRY_CAMEL_CASE, data);
     }
 
     public List<Items> getRestauraceVOkoli(){
-        String []data = {"Doporučené podniky", "Otevírací doby", "Jídla, které chci ochutnat"};
+        String []data = {"Příklad: Koya l Korean BBQ & Sushi"};
         return prepareItemsList(Constants.RESTAURACE_V_OKOLI_CAMEL_CASE, data);
+    }
+
+    public List<Items> getMujList(){
+        String []data = {"Příklad: Powerbanka"};
+        return prepareItemsList(Constants.MUJ_LIST_CAMEL_CASE, data);
     }
 
     public List<Items> prepareItemsList(String category, String[] data){
@@ -101,6 +104,7 @@ public class AppData extends Application {
         listOfAllItems.add(getRezervaceAVstupenky());
         listOfAllItems.add(getSuvenyry());
         listOfAllItems.add(getRestauraceVOkoli());
+        listOfAllItems.add(getMujList());
         return listOfAllItems;
     }
 
